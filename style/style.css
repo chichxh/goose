@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "Inter-R";
+  font-weight: 400;
+  src: url(../fonts/Inter-Regular.otf);
+}
+@font-face {
+  font-family: "Inter-B";
+  font-weight: 600;
+  src: url(../fonts/Inter-Bold.otf);
+}
+@keyframes goose_appear {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+@keyframes G_appear {
+  0% {
+    top: 50%;
+    left: 47%;
+  }
+  50% {
+    top: 5%;
+    left: 5%;
+  }
+  100% {
+    top: 50%;
+    left: 47%;
+  }
+}
+@keyframes OO_appear {
+  0% {
+    top: 50%;
+    right: 49%;
+  }
+  50% {
+    top: 5%;
+    right: 5%;
+  }
+  100% {
+    top: 50%;
+    right: 49%;
+  }
+}
+@keyframes S_appear {
+  0% {
+    top: 55%;
+    left: 47%;
+  }
+  50% {
+    top: 90%;
+    left: 5%;
+  }
+  100% {
+    top: 55%;
+    left: 47%;
+  }
+}
+@keyframes E_appear {
+  0% {
+    top: 55%;
+    right: 49%;
+  }
+  50% {
+    top: 90%;
+    right: 5%;
+  }
+  100% {
+    top: 55%;
+    right: 49%;
+  }
+}
+@keyframes floating_text {
+  0% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #161616;
+  font-family: "Inter-R", sans-serif;
+  color: #fff;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Inter-B";
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 100vh 200px 1fr 200px 80px;
+}
+
+.animation {
+  height: 100vh;
+  position: relative;
+}
+.animation img {
+  position: absolute;
+  top: -300%;
+  left: 35%;
+  animation: goose_appear 5s ease 1s infinite;
+}
+.animation .animation__G {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  animation: G_appear 5s ease 1s infinite;
+}
+.animation .animation__OO {
+  position: absolute;
+  top: 50%;
+  right: 49%;
+  animation: OO_appear 5s ease 1s infinite;
+}
+.animation .animation__S {
+  position: absolute;
+  top: 55%;
+  left: 47%;
+  animation: S_appear 5s ease 1s infinite;
+}
+.animation .animation__E {
+  position: absolute;
+  top: 55%;
+  right: 49%;
+  animation: E_appear 5s ease 1s infinite;
+}
+
+.marquee {
+  padding: 100px 0px;
+  font-size: 5rem;
+  white-space: nowrap;
+  animation: floating_text 14s linear infinite;
+}
+
+.text {
+  width: 50%;
+  letter-spacing: 0.04em;
+}
+
+.main {
+  padding: 0 40px;
+}
+.main .block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "image image" "who_is_goose who_is_goose_text" "goose_love_text goose_love";
+}
+.main .block .image {
+  grid-area: image;
+  width: 100%;
+  text-align: center;
+  padding: 100px 0px;
+}
+.main .block .who_is_goose {
+  grid-area: who_is_goose;
+}
+.main .block .who_is_goose.text {
+  grid-area: who_is_goose_text;
+}
+.main .block .goose_love {
+  grid-area: goose_love;
+}
+.main .block .goose_love img {
+  width: 80%;
+}
+.main .block .goose_love.text {
+  grid-area: goose_love_text;
+  text-align: end;
+  margin-left: 40%;
+}
+.main .block_h .goose_feather_text {
+  height: 30vh;
+  width: 70%;
+  position: relative;
+}
+.main .block_h .goose_feather_text p:nth-child(1) {
+  position: absolute;
+  width: 40%;
+  top: 0%;
+  left: 0%;
+}
+.main .block_h .goose_feather_text p:nth-child(3) {
+  position: absolute;
+  top: 30%;
+  left: 23%;
+}
+.main .block_h .goose_feather_text p:nth-child(4) {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+}
+.main .block_h .goose_feather_text p:nth-child(5) {
+  position: absolute;
+  top: 50%;
+  left: 27%;
+}
+.main .block_h .goose_feather_text p:nth-child(6) {
+  position: absolute;
+  top: 60%;
+  left: 29%;
+}
+.main .block_h .goose_feather_text p:nth-child(7) {
+  position: absolute;
+  top: 70%;
+  left: 32%;
+}
+.main .block_h .goose_feather {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: flex-end;
+}
+.main .block_h .goose_feather .image_b {
+  grid-column-start: 2;
+}
+.main .block_h .goose_feather .image_sm {
+  grid-column-start: 3;
+}
+.main .block_h .goose_parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px;
+}
+.main .block_h .goose_parent .text.image {
+  align-self: flex-end;
+}
+.main .block_h .gogogo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 100px;
+}
+.main .block_h .gogogo .image img {
+  width: 100%;
+}
+.main .block_h .gogogo .text {
+  margin-left: 20%;
+}
+
+/*# sourceMappingURL=style.css.map */
